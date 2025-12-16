@@ -19,5 +19,12 @@ public class Main {
         System.out.println("Account Holder: " + bankAccount4.getAccountHolder());
         System.out.println("=============================");
 
+
+        Customer customer1 = new Customer("Johan Zoe", "test.test@example.com");
+        System.out.println();
+
+        Customer customer2 = new Customer("Alice Smith", "
     }
 }
+
+

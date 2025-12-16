@@ -33,8 +33,13 @@ public class Customer {
         }
         this.email = email;
     }
-
+    
     public int setId() {
         return UUID.randomUUID().toString().substring(0,8).hashCode();
+    }
+    
+    public void displayInfo() {
+        System.out.println("Customer Name: " + this.getName());
+        System.out.println("Customer Email: " + this.getEmail());
     }
 }

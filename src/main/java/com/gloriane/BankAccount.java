@@ -45,9 +45,10 @@ public class BankAccount {
         } else {
             throw new IllegalArgumentException("Invalid withdrawal amount");
         }
-        System.out.println(getAccountHolder());
     }
 
+    public void displayAccountInfo() {
+        System.out.println("Account Holder: " + this.getAccountHolder());
+        System.out.println("Account Balance: $" + this.getBalance());
+    }
 }
-
-
