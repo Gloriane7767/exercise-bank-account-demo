@@ -15,10 +15,6 @@ public class Student {
         setMajor(major);
     }
 
-    private int generateId() {
-        return Math.abs(UUID.randomUUID().toString().substring(0,8).hashCode());
-    }
-
     public String getName() {
         return name;
     }
@@ -31,8 +27,12 @@ public class Student {
         return major;
     }
 
-    public int setId() {
+    private int generateId() {
         return UUID.randomUUID().toString().substring(0,8).hashCode();
+    }
+
+    public int setId() {
+        return id;
     }
 
     public void setName(String name) {
