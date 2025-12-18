@@ -1,20 +1,25 @@
 package com.gloriane;
 
-import java.util.UUID;
-
+// ===================== Exercise 3 =====================
+    // Fields
 public class Student {
-    private int id;
+    private int studentId;
     private String name;
     private int age;
     private String major;
 
-    public Student(String name, int age, String major) {
-        this.id = generateId();
+    // Parameterized constructor
+    public Student(int studentId, String name, int age, String major) {
+        setStudentId(studentId);
         setName(name);
         setAge(age);
         setMajor(major);
     }
 
+    // Getters/Setters
+    public int getStudentId(){
+        return studentId;
+    }
     public String getName() {
         return name;
     }
@@ -27,12 +32,10 @@ public class Student {
         return major;
     }
 
-    private int generateId() {
-        return UUID.randomUUID().toString().substring(0,8).hashCode();
-    }
-
-    public int setId() {
-        return id;
+    public void setStudentId(int studentId) {
+        if (studentId > 0) {
+            this.studentId = studentId;
+        }
     }
 
     public void setName(String name) {
@@ -58,14 +61,7 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{id=" + id + ", name='" + name + "', age=" + age + ", major='" + major + "'}";
-    }
-
-    public Student getStudent() {
-        if (name == null || name.trim().isEmpty() || major == null || major.trim().isEmpty()) {
-            throw new IllegalArgumentException("Invalid student information");
-        }
-        return this;
+        return "Student{id=" + studentId + ", name='" + name + "', age=" + age + ", major='" + major + "'}";
     }
 }
 
