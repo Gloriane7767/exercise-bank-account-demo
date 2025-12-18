@@ -1,16 +1,22 @@
 package com.gloriane;
 
-import java.util.UUID;
-
+// ===================== Exercise 2 =====================
+    // Fields
 public class Customer {
-    private  int id;
+    private int customerId;
     private String name;
     private String email;
 
-    public Customer(String name, String email) {
-        this.id = generateId();
+    // Parameterized constructor
+    public Customer(int customerId, String name, String email) {
+        setCustomerId(customerId);
         setName(name);
         setEmail(email);
+    }
+
+    // Getters/Setters
+    public int getCustomerId() {
+        return customerId;
     }
 
     public String getName() {
@@ -21,13 +27,11 @@ public class Customer {
         return email;
     }
 
-
-    private int generateId() {
-        return UUID.randomUUID().toString().substring(0, 8).hashCode();
-    }
-
-    public int getId() {
-        return id;
+    public void setCustomerId(int customerId) {
+        // simple validation: id must be positive
+        if(customerId > 0) {
+            this.customerId = customerId;
+        }
     }
 
     public void setName(String name) {
@@ -46,15 +50,6 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "Customer{id=" + id + ", name='" + name + "', email='" + email + "'}";
+        return "Customer{id=" + customerId + ", name='" + name + "', email='" + email + "'}";
     }
-
-
-    public String getCustomer() {
-        if(name != null && email != null) {
-            return "Customer Name: " + name + ", Email: " + email;
-        } else {
-            return "Customer information is incomplete.";
-        }
     }
-}

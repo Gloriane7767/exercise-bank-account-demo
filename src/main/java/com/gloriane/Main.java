@@ -20,20 +20,20 @@ public class Main {
         System.out.println("=============================");
 
 
-        Customer customer1 = new Customer("Johan Zoe", "test.test@example.com");
-        System.out.println("Customer: " + customer1.getCustomer());
+        Customer customer1 = new Customer(1, "Johan Zoe", "test.test@example.com");
+        System.out.println("Customer: " + customer1.toString());
         System.out.println("=============================");
 
-        Customer customer2 = new Customer("Alice Smith", "test.test@example.com");
-        System.out.println("Customer: " + customer2.getCustomer());
+        Customer customer2 = new Customer(2, "Alice Smith", "test.test@example.com");
+        System.out.println("Customer: " + customer2.toString());
         System.out.println("=============================");
 
-        Customer customer3 = new Customer("Bob Johnson", "test.test@example.com");
-        System.out.println("Customer: " + customer3.getCustomer());
+        Customer customer3 = new Customer(3, "Bob Johnson", "test.test@example.com");
+        System.out.println("Customer: " + customer3.toString());
         System.out.println("=============================");
 
-        Customer customer4 = new Customer("Charlie Brown", "test.test@example.com");
-        System.out.println("Customer: " + customer4.getCustomer());
+        Customer customer4 = new Customer(4, "Charlie Brown", "test.test@example.com");
+        System.out.println("Customer: " + customer4.toString());
         System.out.println("=============================");
 
         Student student1 = new Student("Alice Johnson", 20, "Computer Science");
@@ -52,43 +52,43 @@ public class Main {
         System.out.println("Student: " + student4.getName() + ", Age: " + student4.getAge() + ", Major: " + student4.getMajor());
         System.out.println("=============================");
 
-        Product product1 = new Product("Laptop", 999.99);
-        System.out.println(product1.getProduct());
+        Product product1 = new Product(1, "Laptop", 999.99);
+        System.out.println(product1.toString());
         System.out.println("=============================");
 
-        Product product2 = new Product("Mouse", 25.50);
-        System.out.println(product2.getProduct());
+        Product product2 = new Product(2, "Mouse", 25.50);
+        System.out.println(product2.toString());
         System.out.println("=============================");
 
-        Product product3 = new Product("Keyboard", 75.00);
-        System.out.println(product3.getProduct());
+        Product product3 = new Product(3, "Keyboard", 75.00);
+        System.out.println(product3.toString());
         System.out.println("=============================");
 
-        Product product4 = new Product("Monitor", 299.99);
-        System.out.println(product4.getProduct());
+        Product product4 = new Product(4, "Monitor", 299.99);
+        System.out.println(product4.toString());
         System.out.println("=============================");
 
-         Order order1 = new Order("ORD123");
-        order1.addProduct("Laptop", 999.99);
-        order1.addProduct("Mouse", 25.50);
+         Order order1 = new Order(123, customer1);
+        order1.addProduct(product1);
+        order1.addProduct(product2);
         System.out.println(order1.toString());
         System.out.println("=============================");
 
-        Order order2 = new Order("ORD124");
-        order2.addProduct("Keyboard", 75.00);
-        order2.addProduct("Monitor", 299.99);
+        Order order2 = new Order(124, customer2);
+        order2.addProduct(product3);
+        order2.addProduct(product4);
         System.out.println(order2.toString());
         System.out.println("=============================");
 
-        Order order3 = new Order("ORD125");
-        order3.addProduct("Laptop", 999.99);
-        order3.addProduct("Monitor", 299.99);
+        Order order3 = new Order(125, customer3);
+        order3.addProduct(product1);
+        order3.addProduct(product4);
         System.out.println(order3.toString());
         System.out.println("=============================");
 
-        Order order4 = new Order("ORD126");
-        order4.addProduct("Mouse", 25.50);
-        order4.addProduct("Keyboard", 75.00);
+        Order order4 = new Order(126, customer4);
+        order4.addProduct(product2);
+        order4.addProduct(product3);
         System.out.println(order4.toString());
         System.out.println("=============================");
     }

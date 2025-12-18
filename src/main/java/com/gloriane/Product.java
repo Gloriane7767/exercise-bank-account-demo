@@ -1,18 +1,23 @@
 package com.gloriane;
 
-import java.util.UUID;
-
+// ===================== Exercise 4 =====================
+    // Fields
 public class Product {
-    private int id;
+    private int productId;
     private String name;
     private double price;
 
-    public Product(String name, double price) {
-        this.id = generateId();
+    // Parameterized constructor
+    public Product(int productId, String name, double price) {
+        setProductId(productId);
         setName(name);
-        setPrice(price);
+        setPrice(price); // use setter for safety
     }
 
+    // Getters/Setters
+    public  int getProductId() {
+        return productId;
+    }
     public String getName() {
         return name;
     }
@@ -21,12 +26,10 @@ public class Product {
         return price;
     }
 
-    private int generateId() {
-        return UUID.randomUUID().toString().substring(0, 8).hashCode();
-    }
-
-    public int getId() {
-        return id;
+    public void setProductId(int productId) {
+        if(productId > 0 ) {
+            this.productId = productId;
+        }
     }
     public void setName(String name) {
         if (name == null || name.trim().isEmpty()) {
@@ -35,6 +38,7 @@ public class Product {
         this.name = name;
     }
 
+    // simple validation: price cannot be negative
     public void setPrice(double price) {
         if (price <= 0) {
             throw new IllegalArgumentException("Price must be positive");
@@ -45,12 +49,5 @@ public class Product {
     @Override
     public String toString() {
         return "Product{name='" + name + "', price=" + price + "}";
-    }
-
-    public String getProduct() {
-        if ( name != null && !name.isEmpty() && price > 0 ) {
-            return "Product: " + name + ", Price: $" + price;
-        }
-        return "Invalid product";
     }
 }
